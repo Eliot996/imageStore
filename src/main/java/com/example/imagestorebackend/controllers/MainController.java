@@ -20,7 +20,8 @@ public class MainController {
     }
 
     @PostMapping
-    public void app( @RequestBody Image image){
+    public ResponseEntity<Image> app(@RequestBody Image image){
         list.add(image);
+        return ResponseEntity.ok().body(image);
     }
 }
